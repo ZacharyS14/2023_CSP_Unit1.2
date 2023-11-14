@@ -30,7 +30,7 @@ def bob_clicked(x, y):
         update_score()
         change_position()
     else:
-    counter.hideturtle()
+        counter.hideturtle()
 def change_position():
     bob.penup()
     new_xpos = rand.randint(1, 400)
