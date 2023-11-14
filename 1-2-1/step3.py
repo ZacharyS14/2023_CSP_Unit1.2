@@ -26,8 +26,11 @@ score_writer.goto(-450, 360)
 counter.goto(340,360 )
 #-----game functions--------
 def bob_clicked(x, y):
-    change_position()
-    update_score()
+    if timer_up is False:
+        update_score()
+        change_position()
+    else:
+    counter.hideturtle()
 def change_position():
     bob.penup()
     new_xpos = rand.randint(1, 400)
