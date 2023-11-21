@@ -66,10 +66,10 @@ def manage_leaderboard():
     # show the leaderboard with or without the current player
     if (len(leader_scores_list) < 5 or score >= leader_scores_list[4]):
         lb.update_leaderboard(leaderboard_file_name, leader_names_list, leader_scores_list, player_name, score)
-        lb.draw_leaderboard(True, leader_names_list, leader_scores_list, spot, score)
+        lb.draw_leaderboard(True, leader_names_list, leader_scores_list, bob, score)
 
     else:
-        lb.draw_leaderboard(False, leader_names_list, leader_scores_list, spot, score)
+        lb.draw_leaderboard(False, leader_names_list, leader_scores_list, spot , score)
 
 
 #-----events----------------
