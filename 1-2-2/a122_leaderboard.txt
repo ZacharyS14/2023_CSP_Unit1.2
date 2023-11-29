@@ -1,5 +1,5 @@
-Pat,50
-Jack,42
-Jill,38
-Zach,34
-Billy,29
+Pat,5
+Jack,4
+Jill,3
+Zach,2
+Billy,1

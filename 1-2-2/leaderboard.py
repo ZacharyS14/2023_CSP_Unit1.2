@@ -49,7 +49,7 @@ def get_scores(file_name):
             leader_score += line[index]
             index += 1
         # TODO 5: add the player score to the scores list
-        scores.append(leader_score)
+        scores.append(int(leader_score))
     leaderboard_file.close()
     # TODO 7: return the scores in place of the empty list
     return scores
@@ -107,10 +107,12 @@ def draw_leaderboard(high_scorer, leader_names, leader_scores, turtle_object, pl
     turtle_object.pendown()
 
     # TODO 14: display message about player making/not making leaderboard
-    '''
+    if player_score > leader_scores[4]:
       turtle_object.write("Congratulations!\nYou made the leaderboard!", font=font_setup)
+    else:
       turtle_object.write("Sorry!\nYou didn't make the leaderboard.\nMaybe next time!", font=font_setup)
-    '''
+
+
 
     # move turtle to a new line
     turtle_object.penup()
@@ -118,8 +120,9 @@ def draw_leaderboard(high_scorer, leader_names, leader_scores, turtle_object, pl
     turtle_object.pendown()
 
     # TODO 15: Display a gold/silver/bronze message if player earned a gold/silver/or bronze medal; display nothing if no medal
-    '''
+    if (player_score >= bronze_score and player_score < silver_score):
       turtle_object.write("You earned a gold medal!", font=font_setup)
+    elif (player_score >= silver_score and player_score < silver_score):
       turtle_object.write("You earned a silver medal!", font=font_setup)
+    elif (player_score >= bronze_score and player_score < bronze_score):
       turtle_object.write("You earned a bronze medal!", font=font_setup)
-    '''
