@@ -1,4 +1,6 @@
 import turtle as trtl
+
+drawer = trtl
 """
 x = starting distance
 y = incremental distance
@@ -15,30 +17,30 @@ y = incremental distance
 """
 
 def spiral():
-    trtl.speed(0)
+    drawer.speed(0)
     x = 10
     y = 10
     for step in range(25):
-        trtl.left(90)
-        trtl.forward(x + y)
-        y += 10
-        draw_door()
-        trtl.forward(x)
-        trtl.penup()
-        trtl.forward(x * 2)
-        trtl.pendown()
+        if step >= 4:
+            drawer.left(90)
+            draw_door()
+            draw_barriers()
+            drawer.forward(x + y)
+            y += 10
+
 def draw_door():
-    trtl.forward(40)
-    trtl.left(90)
-    trtl.forward(10 * 2)
-    trtl.back(10 * 2)
-    trtl.right(90)
+    drawer.forward(10)
+    drawer.penup()
+    drawer.forward(10 * 2)
+    drawer.pendown()
 def draw_barriers():
-    trtl.forward(40)
-    trtl.left(90)
-    trtl.forward(10 * 2)
-    trtl.back(10 * 2)
-    trtl.right(90)
+    drawer.forward(40)
+    drawer.left(90)
+    drawer.forward(10 * 2)
+    drawer.back(10 * 2)
+    drawer.right(90)
+def door_random():
+    door = rand.randint()
 
 spiral()
 wn = trtl.Screen()
