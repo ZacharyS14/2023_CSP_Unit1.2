@@ -12,7 +12,7 @@ def spiral():
     door_width = 10
     drawer.penup()
     drawer.goto(0,0)
-    drawer.pendown()
+    drawer.pendown() a
     for step in range(26):
         if step <= 4:
             drawer.penup()
