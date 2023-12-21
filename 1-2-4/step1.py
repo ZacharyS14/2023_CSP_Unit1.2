@@ -1,12 +1,18 @@
 import turtle as trtl
-
+import random as rand
 drawer = trtl
-path_width = 20
-wall_len = 10
+path_width = 10
+wall_len = 5
 def spiral():
     drawer.speed(0)
     x = 10
     y = 10
+    wall_length = 10
+    wall_increment = 15
+    door_width = 10
+    drawer.penup()
+    drawer.goto(0,0)
+    drawer.pendown()
     for step in range(26):
         if step <= 4:
             drawer.penup()
@@ -14,7 +20,7 @@ def spiral():
             drawer.left(90)
             draw_door()
             draw_barriers()
-            drawer.forward(x + y)
+            drawer.forward(x + y - 30 - 10)
             y += 10
 
 def draw_door():
@@ -31,6 +37,7 @@ def draw_barriers():
 
 def random_door():
     door = rand.randint(path_width*2,(wall_len - path_width*2))
+def random_barrier():
     barrier = rand.randint(path_width*2,(wall_len-path_width*2))
 
 spiral()
